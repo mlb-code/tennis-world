@@ -277,11 +277,53 @@
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 1.8em; }
-            nav { flex-wrap: wrap; gap: 10px; }
-            .players-grid { grid-template-columns: 1fr; }
-            .rankings-table { font-size: 0.85em; }
-            .rankings-table th, .rankings-table td { padding: 8px 10px; }
+            header { padding: 15px 10px; }
+            header h1 { font-size: 1.6em; }
+            nav { flex-wrap: wrap; gap: 8px; }
+            nav a { font-size: 0.95em; padding: 6px 14px; }
+
+            .hero { padding: 25px 15px; }
+            .hero h2 { font-size: 1.3em; }
+            .hero p { font-size: 0.95em; }
+
+            .section { padding: 20px 10px; }
+            .section h2 { font-size: 1.5em; margin-bottom: 20px; }
+
+            .players-grid { grid-template-columns: 1fr; gap: 15px; }
+            .player-card { padding: 20px 15px; }
+            .player-emoji { font-size: 3em; margin-bottom: 10px; }
+            .player-card h3 { font-size: 1.2em; }
+
+            /* Image popup - show below card on mobile */
+            .player-img-popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) !important;
+            }
+            .player-card:hover .player-img-popup.loaded {
+                animation: fadeInMobile 0.3s ease;
+            }
+
+            .tab-buttons { gap: 10px; }
+            .tab-btn { padding: 8px 20px; font-size: 0.9em; }
+
+            .rankings-table { font-size: 0.8em; }
+            .rankings-table th, .rankings-table td { padding: 8px 6px; }
+
+            footer { padding: 15px 10px; }
+        }
+
+        @keyframes fadeInMobile {
+            from { opacity: 0; transform: translate(-50%, -45%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        @media (max-width: 400px) {
+            header h1 { font-size: 1.3em; }
+            .player-card .stats { font-size: 0.85em; }
+            .rankings-table { font-size: 0.7em; }
+            .rankings-table th, .rankings-table td { padding: 6px 4px; }
         }
     </style>
 </head>
